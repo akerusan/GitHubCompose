@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">GithubCompose</string>
+    <string name="load_error">An error occurred</string>
+    <string name="search">Search</string>
+    <string name="search_github_user">Search Github User</string>
+    <string name="retry">Retry</string>
+    <string name="user_profile">User Profile</string>
+    <string name="followers_number">%d followers</string>
+    <string name="following_number">%d following</string>
+    <string name="written_with_language">Written with %s</string>
+    <string name="repo_web_page">Repo Web Page</string>
 </resources>
