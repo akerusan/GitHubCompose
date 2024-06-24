@@ -4,11 +4,16 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.githubcompose.data.models.SearchResponse
+import com.example.githubcompose.data.models.UserDetailsResponse
 import com.example.githubcompose.data.models.UserListResponse
+import com.example.githubcompose.data.models.UserReposResponse
 import com.example.githubcompose.data.network.GithubApi
 import com.example.githubcompose.data.pagingSource.SearchUserPagingSource
 import com.example.githubcompose.data.pagingSource.UserListPagingSource
+import com.example.githubcompose.utils.Constants.Companion.ACCEPT
+import com.example.githubcompose.utils.Constants.Companion.BEARER_TOKEN
 import kotlinx.coroutines.flow.Flow
+import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -35,5 +40,15 @@ class RemoteDataSource @Inject constructor(private val githubApi: GithubApi) {
             ),
             pagingSourceFactory = { SearchUserPagingSource(githubApi, query) }
         ).flow
+    }
+
+    /** USER DETAILS **/
+    suspend fun getUser(username: String): Response<UserDetailsResponse> {
+        return githubApi.getUser(ACCEPT, BEARER_TOKEN, username)
+    }
+
+    /** USER REPOSITORIES**/
+    suspend fun getUserRepos(username: String): Response<List<UserReposResponse.Repository>> {
+        return githubApi.getUserRepos(ACCEPT, BEARER_TOKEN, username)
     }
 }
