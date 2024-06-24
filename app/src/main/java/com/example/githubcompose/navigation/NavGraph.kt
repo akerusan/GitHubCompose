@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.example.githubcompose.ui.presentation.home.homeRoute
 import com.example.githubcompose.ui.presentation.user.userRoute
+import com.example.githubcompose.ui.presentation.webview.webViewRoute
 
 @Composable
 fun SetupNavGraph(
@@ -25,8 +26,15 @@ fun SetupNavGraph(
         // ユーザー詳細画面
         userRoute(
             onClickRepo = { url ->
-                // TODO: WebView画面に遷移
+                navController.navigate(ScreenRoute.WebView(url))
             },
+            onClickBack = {
+                navController.popBackStack()
+            }
+        )
+
+        // WebView画面
+        webViewRoute(
             onClickBack = {
                 navController.popBackStack()
             }

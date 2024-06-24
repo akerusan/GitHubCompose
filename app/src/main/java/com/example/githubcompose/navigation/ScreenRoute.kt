@@ -10,4 +10,7 @@ sealed class ScreenRoute {
 
     @Serializable
     data class User(val username: String): ScreenRoute()
+
+    @Serializable
+    data class WebView(val url: String): ScreenRoute()
 }
