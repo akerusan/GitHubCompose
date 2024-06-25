@@ -3,6 +3,7 @@ package com.example.githubcompose.data
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.example.githubcompose.BuildConfig.BEARER_TOKEN
 import com.example.githubcompose.data.models.SearchResponse
 import com.example.githubcompose.data.models.UserDetailsResponse
 import com.example.githubcompose.data.models.UserListResponse
@@ -11,7 +12,6 @@ import com.example.githubcompose.data.network.GithubApi
 import com.example.githubcompose.data.pagingSource.SearchUserPagingSource
 import com.example.githubcompose.data.pagingSource.UserListPagingSource
 import com.example.githubcompose.utils.Constants.Companion.ACCEPT
-import com.example.githubcompose.utils.Constants.Companion.BEARER_TOKEN
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import javax.inject.Inject

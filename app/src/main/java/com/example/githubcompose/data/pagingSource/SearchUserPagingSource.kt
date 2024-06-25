@@ -2,10 +2,10 @@ package com.example.githubcompose.data.pagingSource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.githubcompose.BuildConfig.BEARER_TOKEN
 import com.example.githubcompose.data.models.SearchResponse
 import com.example.githubcompose.data.network.GithubApi
 import com.example.githubcompose.utils.Constants.Companion.ACCEPT
-import com.example.githubcompose.utils.Constants.Companion.BEARER_TOKEN
 import retrofit2.HttpException
 import java.io.IOException
 
